@@ -1,9 +1,11 @@
 # SpaceKraken
 Code for space kraken
 
-Code for stairs lettering WS2811
-Code for stairs sides WS2801
-Code for car sides WS2811
-Code for infinity mirror
+1. Stairs lettering #WS2811 12V <br>
+2. Stairs sides #WS2801 ??V <br>
+3. Car sides #WS2811 12V <br>
+4. Infinity mirror #???? <br>
+<br> <br>
+FastLED libt
 
-Sensors & cameras
+Sensors & cameras ??? ??? ???
