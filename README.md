@@ -1,10 +1,13 @@
 # SpaceKraken
 Code for space kraken
 
-1. Stairs lettering #WS2811 12V <br>
-2. Stairs sides #WS2801 ??V <br>
-3. Car sides #WS2811 12V <br>
-4. Infinity mirror #???? <br>
+LEDPatternIn as test code for all of stairs, separated into 3 strips
+
+
+1. Stairs lettering #WS2811 12V 1strip–41pcs<br>
+2. Stairs sides #WS2801 ??V 2strip–32&28pcs<br>
+3. Car sides #WS2811 12V ?? ??<br>
+4. Infinity mirror #???? ??V 1strip ??pcs<br>
 <br> <br>
 FastLED lib<br>
 https://github.com/FastLED/FastLED/wiki/Overview (also in bookmarks bar>coding>leds)
