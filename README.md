@@ -1,7 +1,10 @@
 # SpaceKraken
 Code for space kraken
 
-LEDPatternIn as test code for all of stairs, separated into 3 strips, <br> if not working, try commenting out global variables LED_type2, DATA_PIN3, NUN_LEDS3, & the 3rd line of addLEDs in setup
+LEDPatternIn as test code for all of stairs, separated into 3 strips,
+<br> if not working, try commenting out global variables LED_type2, DATA_PIN3, NUN_LEDS3, & the 3rd line of addLEDs in setup
+<br> goal is to add digital toggle/sensor to cycle through patterns when triggered
+<br> ideally sending current pattern to next strip (next data pin) when cycled out
 
 
 1. Stairs lettering #WS2811 12V 1strip–41pcs<br>
