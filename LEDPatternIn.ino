@@ -35,6 +35,17 @@ FASTLED_USING_NAMESPACE
 #define NUM_LEDS3    41
 CRGB leds[NUM_LEDS];
 
+//---------------------------------------------------------------
+//BUTTON STUFF
+// This uses JChristensen's Button Library from:
+//   https://github.com/JChristensen/Button
+#include "Button.h"    // Include Button library
+const int buttonPin = 4;  // Set digital pin used with debounced pushbutton
+Button myButton(buttonPin, true, true, 50);  // Declare the button
+
+
+//---------------------------------------------------------------
+
 #define BRIGHTNESS          96
 #define FRAMES_PER_SECOND  120
 
@@ -71,7 +82,12 @@ void loop()
 
   // do some periodic updates
   EVERY_N_MILLISECONDS( 20 ) { gHue++; } // slowly cycle the "base color" through the rainbow
-  EVERY_N_SECONDS( 10 ) { nextPattern(); } // change patterns periodically
+  
+  // BUTTON STUFF
+  //   Not using this timer to change patterns any more.  Instead check the button.
+  //     EVERY_N_SECONDS( 10 ) { nextPattern(); } // change patterns periodically
+  //
+  readbutton();  // check for button press
 }
 
 #define ARRAY_SIZE(A) (sizeof(A) / sizeof((A)[0]))
@@ -138,3 +154,24 @@ void juggle() {
     dothue += 32;
   }
 }
+
+//BUTTON STUFF
+//---------Function to read the button and do something----------
+void readbutton() {
+  myButton.read();
+  if(myButton.wasPressed()) {
+    Serial.println("Button pressed!  Next pattern...   ");
+    nextPattern();  // Change to the next pattern
+
+    //Flash pixel zero white as a visual that button was pressed.
+    leds[0] = CHSV(0,0,255);  //Set first pixel color white
+    FastLED.show();  //Update display
+    delay(100);  //Short pause so we can see leds[0] flash
+    leds[0] = CRGB::Black;  //Set first pixel off
+    FastLED.show();  //Update display
+    delay(100);  //Short pause so we can see leds[0] flash
+  }
+}//end_readbutton
+
+
+//---------------------------------------------------------------
