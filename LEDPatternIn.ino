@@ -25,14 +25,15 @@ FASTLED_USING_NAMESPACE
 
 #define DATA_PIN1    3
 #define DATA_PIN2    4
-#define DATA_PIN3    5
+//#define DATA_PIN3    5
 //#define CLK_PIN   6
 #define LED_TYPE1    WS2802
-#define LED_TYPE2    WS2811
+//#define LED_TYPE2    WS2811
 #define COLOR_ORDER GRB
 #define NUM_LEDS1    32
 #define NUM_LEDS2    28
-#define NUM_LEDS3    41
+//#define NUM_LEDS3    41
+#define NUM_LEDS    NUM_LEDS1 + NUM_LEDS2
 CRGB leds[NUM_LEDS];
 
 //---------------------------------------------------------------
@@ -40,7 +41,7 @@ CRGB leds[NUM_LEDS];
 // This uses JChristensen's Button Library from:
 //   https://github.com/JChristensen/Button
 #include "Button.h"    // Include Button library
-const int buttonPin = 4;  // Set digital pin used with debounced pushbutton
+const int buttonPin = 6;  // Set digital pin used with debounced pushbutton
 Button myButton(buttonPin, true, true, 50);  // Declare the button
 
 
@@ -55,7 +56,7 @@ void setup() {
   // tell FastLED about the LED strip configuration
   FastLED.addLeds<LED_TYPE1,DATA_PIN1,COLOR_ORDER>(leds, NUM_LEDS1).setCorrection(TypicalLEDStrip);
   FastLED.addLeds<LED_TYPE1,DATA_PIN2,COLOR_ORDER>(leds, NUM_LEDS1, NUM_LEDS2).setCorrection(TypicalLEDStrip);
-  FastLED.addLeds<LED_TYPE2,DATA_PIN3,COLOR_ORDER>(leds, NUM_LEDS2, NUM_LEDS3).setCorrection(TypicalLEDStrip);
+  //FastLED.addLeds<LED_TYPE2,DATA_PIN3,COLOR_ORDER>(leds, NUM_LEDS2, NUM_LEDS3).setCorrection(TypicalLEDStrip);
   //FastLED.addLeds<LED_TYPE,DATA_PIN,CLK_PIN,COLOR_ORDER>(leds, NUM_LEDS).setCorrection(TypicalLEDStrip);
 
   // set master brightness control
