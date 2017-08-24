@@ -27,7 +27,7 @@ FASTLED_USING_NAMESPACE
 #define DATA_PIN2    4
 //#define DATA_PIN3    5
 //#define CLK_PIN   6
-#define LED_TYPE1    WS2802
+#define LED_TYPE1    WS2801
 //#define LED_TYPE2    WS2811
 #define COLOR_ORDER GRB
 #define NUM_LEDS1    32
